@@ -1,0 +1,29 @@
+# Ignore checkpoint files
+*.ckpt
+
+# Ignore NumPy files
+*.npy
+
+# Ignore .np and .npt files (if they are custom extensions)
+*.np
+*.npt
+
+# Ignore .zip files
+*.zip
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore files with "DATASET" in the name
+*DATASET*
+
+#
+*exp*
+*looksok*
+*ckpt*
+
+*EndNOTE*
+
+# Ignore PyTorch model files
+*.pt
+*.pth
