@@ -19,6 +19,7 @@ def connect_db():
 def insert_data(save_root, epoch, avg_loss, avg_psnr,type):
     global database
     import pymysql
+    return 
     if (database == None):
         connect_db()
     #type val or train

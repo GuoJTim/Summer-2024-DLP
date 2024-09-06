@@ -58,6 +58,15 @@ from torch_sqrtm import sqrtm, torch_matmul_to_array, np_to_gpu_tensor
 IMAGE_EXTENSIONS = {'bmp', 'jpg', 'jpeg', 'pgm', 'png', 'ppm',
                     'tif', 'tiff', 'webp'}
 
+def store_data_to_csv(mask_func, iter, fid_value, file_name='fid_scores.csv'):
+    # Create a DataFrame with the new data
+    df_new = pd.DataFrame([[mask_func, iter, fid_value]], columns=['mask_func', 'iter', 'fid_value'])
+
+    # Check if the CSV file exists
+    file_exists = os.path.isfile(file_name)
+    
+    # Write or append to the CSV file
+    df_new.to_csv(file_name, mode='a', header=not file_exists, index=False)
 
 class ImagePathDataset(torch.utils.data.Dataset):
     def __init__(self, files, transforms=None):
@@ -360,6 +369,8 @@ def main():
                                           args.dims,
                                           num_workers)
     print('FID: ', fid_value)
+    store_data_to_csv(args.mask_func,args.iter,fid_value)
+    
 
 parser = ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
 parser.add_argument('--batch-size', type=int, default=50,
@@ -379,6 +390,11 @@ parser.add_argument('--save-stats', action='store_true',
 parser.add_argument('--predicted-path', type=str, default="/home/wendy/Maskgit_CIFAR10cat/models/VQGAN/test_i")
 
 parser.add_argument('--gtcsv-path', type=str, default="./test_gt.csv")
+
+
+parser.add_argument('--iter', type=int)
+parser.add_argument('--mask_func', type=str, default="?")
+
 
 if __name__ == '__main__':
     main()

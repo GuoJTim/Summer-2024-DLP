@@ -14,8 +14,8 @@ def frange_cycle_linear(start, stop, n_epoch, n_cycle=4, ratio=0.5):
             i += 1
     return L
 
-n_epoch = 1000
-beta_np_cyc = frange_cycle_linear(0.0, 1.0, 500, 10, 1)
+n_epoch = 40000
+beta_np_cyc = frange_cycle_linear(0.0, 1.0, 40000, 1, 0.25)
 plt.figure(figsize=(10, 6))
 plt.plot(beta_np_cyc, label='Beta Value')
 plt.title('Cycle Linear Schedule')

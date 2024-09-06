@@ -1,0 +1,529 @@
+root@1ee35d80a43e:/workspace/Lab04_template# python3 Trainer.py --device cuda --optim AdamW --DR "../LAB4_Dataset/LAB4_Dataset/" --save_root "./exp-1" --fast_train --train_vi_len 64 --batch_size 1 --per_s
+ave 1 --auto_save --tfr 1 --tfr_sde 10
+(train [TeacherForcing: ON, 1.0], beta: 0.000) Epoch 0, lr:1e-03: 100%|████████████████████| 146/146 [03:01<00:00,  1.24s/it, avg_loss=0.629, avg_psnr=26.9, loss=0.0593, psnr=30.3]
+(val) Epoch 0, lr:1e-03: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:17<00:00, 17.51s/it, avg_loss=-1, avg_psnr=-1, loss=93.8, psnr=8.49]
+save ckpt to ./exp-1/epoch=0_psnr=8.489_loss=93.837.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.025) Epoch 1, lr:1e-03: 100%|██████████████████████| 146/146 [03:01<00:00,  1.24s/it, avg_loss=50.8, avg_psnr=33.1, loss=0.222, psnr=35.8]
+(val) Epoch 1, lr:1e-03: 100%|██████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.05s/it, avg_loss=-1, avg_psnr=-1, loss=47, psnr=12.3]
+save ckpt to ./exp-1/epoch=1_psnr=12.260_loss=47.049.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.050) Epoch 2, lr:1e-04: 100%|███████████████████| 146/146 [03:02<00:00,  1.25s/it, avg_loss=0.0841, avg_psnr=37.6, loss=0.0575, psnr=36.4]
+(val) Epoch 2, lr:1e-04: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.12s/it, avg_loss=-1, avg_psnr=-1, loss=30.4, psnr=14.4]
+save ckpt to ./exp-1/epoch=2_psnr=14.403_loss=30.377.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.075) Epoch 3, lr:1e-04: 100%|███████████████████| 146/146 [03:00<00:00,  1.23s/it, avg_loss=0.0624, avg_psnr=38.1, loss=0.0513, psnr=36.5]
+(val) Epoch 3, lr:1e-04: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.18s/it, avg_loss=-1, avg_psnr=-1, loss=13.2, psnr=17.2]
+save ckpt to ./exp-1/epoch=3_psnr=17.207_loss=13.155.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.100) Epoch 4, lr:1e-04: 100%|███████████████████| 146/146 [03:01<00:00,  1.24s/it, avg_loss=0.0644, avg_psnr=38.4, loss=0.0502, psnr=36.4]
+(val) Epoch 4, lr:1e-04: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.18s/it, avg_loss=-1, avg_psnr=-1, loss=20.8, psnr=16.7]
+save ckpt to ./exp-1/epoch=4.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.125) Epoch 5, lr:1e-05: 100%|███████████████████| 146/146 [03:01<00:00,  1.24s/it, avg_loss=0.0517, avg_psnr=38.6, loss=0.0514, psnr=36.6]
+(val) Epoch 5, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.16s/it, avg_loss=-1, avg_psnr=-1, loss=9.58, psnr=19.6]
+save ckpt to ./exp-1/epoch=5_psnr=19.568_loss=9.582.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.150) Epoch 6, lr:1e-05: 100%|███████████████████| 146/146 [03:01<00:00,  1.24s/it, avg_loss=0.0528, avg_psnr=38.7, loss=0.0525, psnr=36.7]
+(val) Epoch 6, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.31s/it, avg_loss=-1, avg_psnr=-1, loss=11.9, psnr=18.8]
+save ckpt to ./exp-1/epoch=6.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.175) Epoch 7, lr:1e-05: 100%|███████████████████| 365/365 [07:30<00:00,  1.23s/it, avg_loss=0.0548, avg_psnr=37.3, loss=0.0797, psnr=31.6]
+(val) Epoch 7, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.56s/it, avg_loss=-1, avg_psnr=-1, loss=29.2, psnr=14.6]
+save ckpt to ./exp-1/epoch=7.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.200) Epoch 8, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.0493, avg_psnr=37.3, loss=0.0746, psnr=31.6]
+(val) Epoch 8, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.88s/it, avg_loss=-1, avg_psnr=-1, loss=8.17, psnr=20]
+save ckpt to ./exp-1/epoch=8_psnr=19.976_loss=8.173.ckpt
+(train [TeacherForcing: ON, 1.0], beta: 0.225) Epoch 9, lr:1e-05: 100%|████████████████████| 365/365 [07:30<00:00,  1.24s/it, avg_loss=0.0453, avg_psnr=37.4, loss=0.072, psnr=31.6]
+(val) Epoch 9, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.06s/it, avg_loss=-1, avg_psnr=-1, loss=9.86, psnr=19.3]
+save ckpt to ./exp-1/epoch=9.ckpt
+(train [TeacherForcing: ON, 0.9], beta: 0.250) Epoch 10, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.0421, avg_psnr=37.5, loss=0.068, psnr=31.8]
+(val) Epoch 10, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.02s/it, avg_loss=-1, avg_psnr=-1, loss=13.8, psnr=17.9]                         [1088/54549]save ckpt to ./exp-1/epoch=10.ckpt
+(train [TeacherForcing: OFF, 0.8], beta: 0.275) Epoch 11, lr:1e-05: 100%|███████████████████| 365/365 [07:30<00:00,  1.24s/it, avg_loss=0.372, avg_psnr=23.9, loss=0.538, psnr=21.6]
+(val) Epoch 11, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.95s/it, avg_loss=-1, avg_psnr=-1, loss=3.74, psnr=22.8]
+save ckpt to ./exp-1/epoch=11_psnr=22.766_loss=3.735.ckpt
+(train [TeacherForcing: ON, 0.7], beta: 0.300) Epoch 12, lr:1e-05: 100%|██████████████████| 365/365 [07:30<00:00,  1.23s/it, avg_loss=0.0428, avg_psnr=36.9, loss=0.0677, psnr=31.8]
+(val) Epoch 12, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.41s/it, avg_loss=-1, avg_psnr=-1, loss=8.48, psnr=19.1]
+save ckpt to ./exp-1/epoch=12.ckpt
+(train [TeacherForcing: ON, 0.6], beta: 0.325) Epoch 13, lr:1e-05: 100%|████████████████████| 365/365 [07:30<00:00,  1.24s/it, avg_loss=0.04, avg_psnr=37.5, loss=0.0658, psnr=31.8]
+(val) Epoch 13, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.40s/it, avg_loss=-1, avg_psnr=-1, loss=18.5, psnr=16.2]
+save ckpt to ./exp-1/epoch=13.ckpt
+(train [TeacherForcing: ON, 0.5], beta: 0.350) Epoch 14, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.038, avg_psnr=37.6, loss=0.0636, psnr=31.9]
+(val) Epoch 14, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:23<00:00, 23.37s/it, avg_loss=-1, avg_psnr=-1, loss=19, psnr=16.1]
+save ckpt to ./exp-1/epoch=14.ckpt
+(train [TeacherForcing: OFF, 0.4], beta: 0.375) Epoch 15, lr:1e-05: 100%|███████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.301, avg_psnr=24.8, loss=0.593, psnr=21.1]
+(val) Epoch 15, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.12s/it, avg_loss=-1, avg_psnr=-1, loss=8.13, psnr=19]
+save ckpt to ./exp-1/epoch=15.ckpt
+(train [TeacherForcing: OFF, 0.3], beta: 0.400) Epoch 16, lr:1e-05: 100%|██████████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.28, avg_psnr=25, loss=0.532, psnr=21.6]
+(val) Epoch 16, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.99s/it, avg_loss=-1, avg_psnr=-1, loss=8.87, psnr=18.7]
+save ckpt to ./exp-1/epoch=16.ckpt
+(train [TeacherForcing: OFF, 0.2], beta: 0.425) Epoch 17, lr:1e-05: 100%|█████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.252, avg_psnr=25.5, loss=0.4, psnr=22.8]
+(val) Epoch 17, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.17s/it, avg_loss=-1, avg_psnr=-1, loss=3.02, psnr=23.5]
+save ckpt to ./exp-1/epoch=17_psnr=23.474_loss=3.019.ckpt
+(train [TeacherForcing: OFF, 0.1], beta: 0.450) Epoch 18, lr:1e-05: 100%|████████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.249, avg_psnr=25.6, loss=0.53, psnr=21.6]
+(val) Epoch 18, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.14s/it, avg_loss=-1, avg_psnr=-1, loss=10.8, psnr=18]
+save ckpt to ./exp-1/epoch=18.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.475) Epoch 19, lr:1e-05: 100%|███████████████████| 365/365 [07:30<00:00,  1.24s/it, avg_loss=0.238, avg_psnr=25.8, loss=0.331, psnr=23.6]
+(val) Epoch 19, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.99s/it, avg_loss=-1, avg_psnr=-1, loss=2.58, psnr=24.2]
+save ckpt to ./exp-1/epoch=19_psnr=24.221_loss=2.577.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.500) Epoch 20, lr:1e-05: 100%|███████████████████| 365/365 [07:30<00:00,  1.24s/it, avg_loss=0.241, avg_psnr=25.8, loss=0.458, psnr=22.3]
+  0%|                                                                                                                                                         | 0/1 [00:00<?, ?it/s]Trainer.py:404: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure(figsize=(10, 6))
+(val) Epoch 20, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.97s/it, avg_loss=-1, avg_psnr=-1, loss=7.11, psnr=20.5]                         [1054/54549]save ckpt to ./exp-1/epoch=20.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.525) Epoch 21, lr:1e-05: 100%|█████████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.235, avg_psnr=26, loss=0.354, psnr=23.4]
+(val) Epoch 21, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:17<00:00, 17.26s/it, avg_loss=-1, avg_psnr=-1, loss=7.34, psnr=19.8]
+save ckpt to ./exp-1/epoch=21.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.550) Epoch 22, lr:1e-05: 100%|████████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.23, avg_psnr=26.1, loss=0.408, psnr=22.8]
+(val) Epoch 22, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.12s/it, avg_loss=-1, avg_psnr=-1, loss=6.63, psnr=20.6]
+save ckpt to ./exp-1/epoch=22.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.575) Epoch 23, lr:1e-05: 100%|██████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.229, avg_psnr=26, loss=0.42, psnr=22.7]
+(val) Epoch 23, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=11.3, psnr=17.7]
+save ckpt to ./exp-1/epoch=23.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.600) Epoch 24, lr:1e-05: 100%|███████████████████| 365/365 [07:30<00:00,  1.23s/it, avg_loss=0.219, avg_psnr=26.3, loss=0.312, psnr=23.9]
+(val) Epoch 24, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.98s/it, avg_loss=-1, avg_psnr=-1, loss=5.2, psnr=21.2]
+save ckpt to ./exp-1/epoch=24.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.625) Epoch 25, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.207, avg_psnr=26.6, loss=0.287, psnr=24.3]
+(val) Epoch 25, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.08s/it, avg_loss=-1, avg_psnr=-1, loss=2.53, psnr=24.3]
+save ckpt to ./exp-1/epoch=25_psnr=24.277_loss=2.533.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.650) Epoch 26, lr:1e-05: 100%|█████████████████████| 365/365 [07:30<00:00,  1.23s/it, avg_loss=0.213, avg_psnr=26.4, loss=0.3, psnr=24.1]
+(val) Epoch 26, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.10s/it, avg_loss=-1, avg_psnr=-1, loss=2.95, psnr=23.6]
+save ckpt to ./exp-1/epoch=26.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.675) Epoch 27, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.211, avg_psnr=26.5, loss=0.306, psnr=23.9]
+(val) Epoch 27, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.01s/it, avg_loss=-1, avg_psnr=-1, loss=3.34, psnr=23]
+save ckpt to ./exp-1/epoch=27.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.700) Epoch 28, lr:1e-05: 100%|███████████████████| 365/365 [07:30<00:00,  1.23s/it, avg_loss=0.205, avg_psnr=26.7, loss=0.328, psnr=23.6]
+(val) Epoch 28, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.16s/it, avg_loss=-1, avg_psnr=-1, loss=3.6, psnr=22.7]
+save ckpt to ./exp-1/epoch=28.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.725) Epoch 29, lr:1e-05: 100%|█████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.196, avg_psnr=26.8, loss=0.313, psnr=24]
+(val) Epoch 29, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.09s/it, avg_loss=-1, avg_psnr=-1, loss=9.38, psnr=18.7]
+save ckpt to ./exp-1/epoch=29.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.750) Epoch 30, lr:1e-05: 100%|███████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.204, avg_psnr=26.7, loss=0.266, psnr=24.6]
+(val) Epoch 30, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.03s/it, avg_loss=-1, avg_psnr=-1, loss=5.96, psnr=20.7]
+save ckpt to ./exp-1/epoch=30.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.775) Epoch 31, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.196, avg_psnr=26.9, loss=0.277, psnr=24.4]
+(val) Epoch 31, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.65s/it, avg_loss=-1, avg_psnr=-1, loss=3.6, psnr=22.8]
+save ckpt to ./exp-1/epoch=31.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.800) Epoch 32, lr:1e-05: 100%|█████████████████████| 365/365 [07:30<00:00,  1.23s/it, avg_loss=0.191, avg_psnr=27, loss=0.284, psnr=24.3]
+(val) Epoch 32, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.13s/it, avg_loss=-1, avg_psnr=-1, loss=7.24, psnr=19.8]
+save ckpt to ./exp-1/epoch=32.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.825) Epoch 33, lr:1e-05: 100%|█████████████████████| 365/365 [07:29<00:00,  1.23s/it, avg_loss=0.188, avg_psnr=27, loss=0.269, psnr=24.6]
+(val) Epoch 33, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.13s/it, avg_loss=-1, avg_psnr=-1, loss=2.77, psnr=24]
+save ckpt to ./exp-1/epoch=33.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.850) Epoch 34, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.185, avg_psnr=27.1, loss=0.309, psnr=23.9]
+(val) Epoch 34, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=4.54, psnr=21.9]
+save ckpt to ./exp-1/epoch=34.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.875) Epoch 35, lr:1e-05: 100%|██████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.186, avg_psnr=27, loss=0.26, psnr=24.6]
+(val) Epoch 35, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.97s/it, avg_loss=-1, avg_psnr=-1, loss=3.57, psnr=23]
+save ckpt to ./exp-1/epoch=35.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.900) Epoch 36, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.182, avg_psnr=27.1, loss=0.236, psnr=25.1]
+(val) Epoch 36, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.11s/it, avg_loss=-1, avg_psnr=-1, loss=9.15, psnr=18.9]
+save ckpt to ./exp-1/epoch=36.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.925) Epoch 37, lr:1e-05: 100%|███████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.175, avg_psnr=27.4, loss=0.228, psnr=25.3]
+(val) Epoch 37, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.01s/it, avg_loss=-1, avg_psnr=-1, loss=9.01, psnr=18.9]
+save ckpt to ./exp-1/epoch=37.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.950) Epoch 38, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.174, avg_psnr=27.4, loss=0.279, psnr=24.4]
+(val) Epoch 38, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.48s/it, avg_loss=-1, avg_psnr=-1, loss=11.3, psnr=17.9]
+save ckpt to ./exp-1/epoch=38.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.975) Epoch 39, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.171, avg_psnr=27.5, loss=0.218, psnr=25.5]
+(val) Epoch 39, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.92s/it, avg_loss=-1, avg_psnr=-1, loss=4, psnr=22.3]
+save ckpt to ./exp-1/epoch=39.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.000) Epoch 40, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.176, avg_psnr=26.8, loss=0.237, psnr=24.5]
+(val) Epoch 40, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.92s/it, avg_loss=-1, avg_psnr=-1, loss=3.35, psnr=23.2]
+save ckpt to ./exp-1/epoch=40.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.025) Epoch 41, lr:1e-05: 100%|███████████████████| 365/365 [07:29<00:00,  1.23s/it, avg_loss=0.161, avg_psnr=27.1, loss=0.166, psnr=26.2]
+(val) Epoch 41, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.92s/it, avg_loss=-1, avg_psnr=-1, loss=3.05, psnr=23.4]
+save ckpt to ./exp-1/epoch=41.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.050) Epoch 42, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.158, avg_psnr=27.3, loss=0.233, psnr=24.7]
+(val) Epoch 42, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.13s/it, avg_loss=-1, avg_psnr=-1, loss=3.34, psnr=23.2]
+save ckpt to ./exp-1/epoch=42.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.075) Epoch 43, lr:1e-05: 100%|████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.158, avg_psnr=27.3, loss=0.19, psnr=25.6]
+(val) Epoch 43, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.15s/it, avg_loss=-1, avg_psnr=-1, loss=2.65, psnr=24.1]
+save ckpt to ./exp-1/epoch=43.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.100) Epoch 44, lr:1e-05: 100%|███████████████████| 365/365 [07:30<00:00,  1.23s/it, avg_loss=0.155, avg_psnr=27.3, loss=0.163, psnr=26.2]
+(val) Epoch 44, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.83s/it, avg_loss=-1, avg_psnr=-1, loss=3.54, psnr=22.9]
+save ckpt to ./exp-1/epoch=44.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.125) Epoch 45, lr:1e-05: 100%|███████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.146, avg_psnr=27.6, loss=0.161, psnr=26.3]
+(val) Epoch 45, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.89s/it, avg_loss=-1, avg_psnr=-1, loss=2.9, psnr=24.1]
+save ckpt to ./exp-1/epoch=45.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 46, lr:1e-05:  92%|█████████████████▍ | 335/365 [06:56<00:37,  1.2(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 46, lr:1e-05:  92%|█████████████████▍ | 335/365 [06:57<00:37,  1.2(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 46, lr:1e-05:  92%|█████████████████▍ | 336/365 [06:57<00:36,  1.2(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 46, lr:1e-05:  92%|█████████████████▍ | 336/365 [06:59<00:36,  1.2(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 46, lr:1e-05:  92%|█████████████████▌ | 337/365 [06:59<00:34,  1.2(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 
+46, lr:1e-05:  92%|████████████████▌ | 337/365 [07:00<00:(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 46, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.151, avg_psnr=27.5, loss=0.165, psnr=26.3]snr=28.7]
+(val) Epoch 46, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=5.55, psnr=21.1]
+save ckpt to ./exp-1/epoch=46.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.175) Epoch 47, lr:1e-05: 100%|████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.15, avg_psnr=27.6, loss=0.209, psnr=25.3]
+(val) Epoch 47, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.79s/it, avg_loss=-1, avg_psnr=-1, loss=2.7, psnr=24.4]
+save ckpt to ./exp-1/epoch=47_psnr=24.384.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.200) Epoch 48, lr:1e-05: 100%|█████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.148, avg_psnr=27.7, loss=0.238, psnr=25]
+(val) Epoch 48, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.05s/it, avg_loss=-1, avg_psnr=-1, loss=9.87, psnr=18.5]
+save ckpt to ./exp-1/epoch=48.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.225) Epoch 49, lr:1e-05: 100%|████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.15, avg_psnr=27.6, loss=0.239, psnr=24.9]
+(val) Epoch 49, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.72s/it, avg_loss=-1, avg_psnr=-1, loss=5.48, psnr=21.6]
+save ckpt to ./exp-1/epoch=49.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.250) Epoch 50, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.145, avg_psnr=27.8, loss=0.215, psnr=25.1]
+(val) Epoch 50, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.73s/it, avg_loss=-1, avg_psnr=-1, loss=5.27, psnr=21.2]
+save ckpt to ./exp-1/epoch=50.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.275) Epoch 51, lr:1e-05: 100%|█████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.14, avg_psnr=27.9, loss=0.22, psnr=25.2]
+(val) Epoch 51, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.87s/it, avg_loss=-1, avg_psnr=-1, loss=11.4, psnr=17.8]
+save ckpt to ./exp-1/epoch=51.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.300) Epoch 52, lr:1e-05: 100%|████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.144, avg_psnr=27.9, loss=0.21, psnr=25.2]
+(val) Epoch 52, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.07s/it, avg_loss=-1, avg_psnr=-1, loss=10.1, psnr=18.6]
+save ckpt to ./exp-1/epoch=52.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.325) Epoch 53, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.147, avg_psnr=27.8, loss=0.225, psnr=25.3]
+(val) Epoch 53, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.76s/it, avg_loss=-1, avg_psnr=-1, loss=9.46, psnr=18.7]
+(train [TeacherForcing: OFF, 0.0], beta: 0.350) Epoch 54, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.137, avg_psnr=28.1, loss=0.143, psnr=26.9]
+(val) Epoch 54, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.89s/it, avg_loss=-1, avg_psnr=-1, loss=3.56, psnr=23.7]
+save ckpt to ./exp-1/epoch=54.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.375) Epoch 55, lr:1e-05: 100%|███████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.144, avg_psnr=27.8, loss=0.154, psnr=26.5]
+(val) Epoch 55, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.88s/it, avg_loss=-1, avg_psnr=-1, loss=3.21, psnr=23.4]
+save ckpt to ./exp-1/epoch=55.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.400) Epoch 56, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.143, avg_psnr=27.9, loss=0.232, psnr=24.9]
+(val) Epoch 56, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.07s/it, avg_loss=-1, avg_psnr=-1, loss=5.82, psnr=20.8]
+save ckpt to ./exp-1/epoch=56.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.425) Epoch 57, lr:1e-05: 100%|█████████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.137, avg_psnr=28, loss=0.167, psnr=26.2]
+(val) Epoch 57, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.82s/it, avg_loss=-1, avg_psnr=-1, loss=4.28, psnr=22.6]
+save ckpt to ./exp-1/epoch=57.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.450) Epoch 58, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.139, avg_psnr=27.9, loss=0.175, psnr=26.1]
+(val) Epoch 58, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.21s/it, avg_loss=-1, avg_psnr=-1, loss=2.07, psnr=25.4]
+save ckpt to ./exp-1/epoch=58_psnr=25.415_loss=2.065.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.475) Epoch 59, lr:1e-05: 100%|████████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.128, avg_psnr=28.3, loss=0.17, psnr=26.3]
+(val) Epoch 59, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.93s/it, avg_loss=-1, avg_psnr=-1, loss=4.39, psnr=22.1]
+save ckpt to ./exp-1/epoch=59.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.500) Epoch 60, lr:1e-05: 100%|███████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.134, avg_psnr=28.3, loss=0.163, psnr=26.4]
+  0%|                                                                                                                                                         | 0/1 [00:00<?, ?it/s]
+(val) Epoch 60, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.71s/it, avg_loss=-1, avg_psnr=-1, loss=1.41, psnr=27.1]
+save ckpt to ./exp-1/epoch=60_psnr=27.072_loss=1.411.ckpt
+
+root@1ee35d80a43e:/workspace/Lab04_template# python3 Trainer.py --device cuda --optim AdamW --DR "../LAB4_Dataset/LAB4_Dataset/" --save_root "./exp-1" --fast_train --train_vi_len 64 --batch_size 1 --per_save 1 --auto_save --tfr 1 --tfr_sde 10 --continue_training --ckpt_path "./exp-1/epoch=61.ckpt" --reset_teacher_forcing
+
+(train [TeacherForcing: ON, 1.0], beta: 0.525) Epoch 61, lr:1e-05: 100%|██████████████████| 146/146 [03:02<00:00,  1.25s/it, avg_loss=0.0302, avg_psnr=35.7, loss=0.0277, psnr=35.5]
+(val) Epoch 61, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.60s/it, avg_loss=-1, avg_psnr=-1, loss=7.99, psnr=19.9]
+save ckpt to ./exp-1/epoch=61_psnr=19.944_loss=7.992.ckpt
+(train [TeacherForcing: ON, 0.9], beta: 0.550) Epoch 62, lr:1e-05: 100%|██████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.0285, avg_psnr=36.3, loss=0.0432, psnr=32.9]
+(val) Epoch 62, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.05s/it, avg_loss=-1, avg_psnr=-1, loss=5.06, psnr=22.1]
+save ckpt to ./exp-1/epoch=62_psnr=22.117_loss=5.064.ckpt
+(train [TeacherForcing: OFF, 0.8], beta: 0.575) Epoch 63, lr:1e-05: 100%|███████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.164, avg_psnr=27.5, loss=0.202, psnr=25.6]
+(val) Epoch 63, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.01s/it, avg_loss=-1, avg_psnr=-1, loss=3.86, psnr=22.6]
+save ckpt to ./exp-1/epoch=63_psnr=22.570_loss=3.864.ckpt
+(train [TeacherForcing: OFF, 0.7], beta: 0.600) Epoch 64, lr:1e-05: 100%|█████████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.145, avg_psnr=28, loss=0.195, psnr=25.6]
+(val) Epoch 64, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.17s/it, avg_loss=-1, avg_psnr=-1, loss=4.71, psnr=21.8]
+save ckpt to ./exp-1/epoch=64.ckpt
+(train [TeacherForcing: OFF, 0.6], beta: 0.625) Epoch 65, lr:1e-05: 100%|███████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.139, avg_psnr=28.2, loss=0.193, psnr=25.8]
+(val) Epoch 65, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.82s/it, avg_loss=-1, avg_psnr=-1, loss=5.08, psnr=21.7]
+save ckpt to ./exp-1/epoch=65.ckpt
+(train [TeacherForcing: OFF, 0.5], beta: 0.650) Epoch 66, lr:1e-05: 100%|███████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.138, avg_psnr=28.2, loss=0.144, psnr=27.1]
+(val) Epoch 66, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.92s/it, avg_loss=-1, avg_psnr=-1, loss=6.6, psnr=20.4]
+save ckpt to ./exp-1/epoch=66.ckpt
+(train [TeacherForcing: OFF, 0.4], beta: 0.675) Epoch 67, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.129, avg_psnr=28.5, loss=0.157, psnr=26.6]
+(val) Epoch 67, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.88s/it, avg_loss=-1, avg_psnr=-1, loss=4.2, psnr=22.2]
+save ckpt to ./exp-1/epoch=67.ckpt
+(train [TeacherForcing: OFF, 0.3], beta: 0.700) Epoch 68, lr:1e-05: 100%|██████████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.129, avg_psnr=28.5, loss=0.15, psnr=27]
+(val) Epoch 68, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.94s/it, avg_loss=-1, avg_psnr=-1, loss=1.95, psnr=25.6]
+save ckpt to ./exp-1/epoch=68_psnr=25.601_loss=1.945.ckpt
+(train [TeacherForcing: OFF, 0.2], beta: 0.725) Epoch 69, lr:1e-05: 100%|████████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.123, avg_psnr=28.7, loss=0.14, psnr=27.1]
+(val) Epoch 69, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.90s/it, avg_loss=-1, avg_psnr=-1, loss=6.47, psnr=20.7]
+save ckpt to ./exp-1/epoch=69.ckpt
+(train [TeacherForcing: OFF, 0.1], beta: 0.750) Epoch 70, lr:1e-05: 100%|███████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.125, avg_psnr=28.7, loss=0.156, psnr=26.7]
+(val) Epoch 70, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.81s/it, avg_loss=-1, avg_psnr=-1, loss=6.79, psnr=20.4]
+save ckpt to ./exp-1/epoch=70.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.775) Epoch 71, lr:1e-05: 100%|███████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.122, avg_psnr=28.8, loss=0.135, psnr=27.4]
+(val) Epoch 71, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.90s/it, avg_loss=-1, avg_psnr=-1, loss=2.24, psnr=24.7]
+save ckpt to ./exp-1/epoch=71.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.800) Epoch 72, lr:1e-05: 100%|████████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.121, avg_psnr=28.7, loss=0.14, psnr=27.2]
+(val) Epoch 72, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.21s/it, avg_loss=-1, avg_psnr=-1, loss=1.67, psnr=26.1]
+save ckpt to ./exp-1/epoch=72_psnr=26.054_loss=1.672.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.825) Epoch 73, lr:1e-05: 100%|███████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.119, avg_psnr=28.9, loss=0.159, psnr=26.6]
+(val) Epoch 73, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.90s/it, avg_loss=-1, avg_psnr=-1, loss=7.65, psnr=19.8]
+save ckpt to ./exp-1/epoch=73.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.850) Epoch 74, lr:1e-05: 100%|████████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.124, avg_psnr=28.7, loss=0.14, psnr=27.1]
+(val) Epoch 74, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.89s/it, avg_loss=-1, avg_psnr=-1, loss=2.55, psnr=24.2]
+save ckpt to ./exp-1/epoch=74.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.875) Epoch 75, lr:1e-05: 100%|███████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.123, avg_psnr=28.7, loss=0.121, psnr=27.9]
+(val) Epoch 75, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.85s/it, avg_loss=-1, avg_psnr=-1, loss=1.2, psnr=27.8]
+save ckpt to ./exp-1/epoch=75_psnr=27.793_loss=1.195.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.900) Epoch 76, lr:1e-05: 100%|███████████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.116, avg_psnr=29, loss=0.183, psnr=26]
+(val) Epoch 76, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.81s/it, avg_loss=-1, avg_psnr=-1, loss=4.66, psnr=22]
+save ckpt to ./exp-1/epoch=76.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.925) Epoch 77, lr:1e-05: 100%|███████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.117, avg_psnr=28.9, loss=0.138, psnr=27.3]
+(val) Epoch 77, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.93s/it, avg_loss=-1, avg_psnr=-1, loss=3.67, psnr=23.6]
+save ckpt to ./exp-1/epoch=77.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.950) Epoch 78, lr:1e-05: 100%|█████████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.116, avg_psnr=29, loss=0.137, psnr=27.3]
+(val) Epoch 78, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.78s/it, avg_loss=-1, avg_psnr=-1, loss=6.42, psnr=20.8]
+save ckpt to ./exp-1/epoch=78.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.975) Epoch 79, lr:1e-05: 100%|████████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.117, avg_psnr=28.9, loss=0.12, psnr=27.9]
+(val) Epoch 79, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.99s/it, avg_loss=-1, avg_psnr=-1, loss=1.37, psnr=27.2]
+save ckpt to ./exp-1/epoch=79.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.000) Epoch 80, lr:1e-05: 100%|█████████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.113, avg_psnr=28.7, loss=0.242, psnr=25]
+(val) Epoch 80, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.07s/it, avg_loss=-1, avg_psnr=-1, loss=11.4, psnr=18]
+save ckpt to ./exp-1/epoch=80.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.025) Epoch 81, lr:1e-05: 100%|████████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.116, avg_psnr=28.4, loss=0.11, psnr=27.8]
+  0%|                                                                                                                                                         | 0/1 [00:00<?, ?it/s]Trainer.py:404: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure(figsize=(10, 6))
+(val) Epoch 81, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.60s/it, avg_loss=-1, avg_psnr=-1, loss=2.62, psnr=24.1]
+save ckpt to ./exp-1/epoch=81.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.050) Epoch 82, lr:1e-05: 100%|███████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.121, avg_psnr=28.5, loss=0.134, psnr=27.2]
+(val) Epoch 82, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.88s/it, avg_loss=-1, avg_psnr=-1, loss=3.49, psnr=23.3]
+save ckpt to ./exp-1/epoch=82.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.075) Epoch 83, lr:1e-05: 100%|███████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.113, avg_psnr=28.6, loss=0.114, psnr=27.7]
+(val) Epoch 83, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.03s/it, avg_loss=-1, avg_psnr=-1, loss=4.39, psnr=23]
+save ckpt to ./exp-1/epoch=83.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.100) Epoch 84, lr:1e-05: 100%|███████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.117, avg_psnr=28.5, loss=0.114, psnr=27.7]
+(val) Epoch 84, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.98s/it, avg_loss=-1, avg_psnr=-1, loss=1.61, psnr=26.7]
+save ckpt to ./exp-1/epoch=84.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.125) Epoch 85, lr:1e-05: 100%|███████████████████| 365/365 [07:31<00:00,  1.24s/it, avg_loss=0.111, avg_psnr=28.7, loss=0.113, psnr=27.7]
+(val) Epoch 85, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.97s/it, avg_loss=-1, avg_psnr=-1, loss=5.98, psnr=21.4]
+save ckpt to ./exp-1/epoch=85.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 86, lr:1e-05: 100%|██████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.103, avg_psnr=29.1, loss=0.0936, psnr=28.7]
+(val) Epoch 86, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=2.22, psnr=25.1]
+save ckpt to ./exp-1/epoch=86.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.175) Epoch 87, lr:1e-05: 100%|███████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.108, avg_psnr=28.9, loss=0.116, psnr=27.7]
+(val) Epoch 87, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.05s/it, avg_loss=-1, avg_psnr=-1, loss=2.3, psnr=25.6]
+save ckpt to ./exp-1/epoch=87.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.200) Epoch 88, lr:1e-05: 100%|███████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.106, avg_psnr=29.1, loss=0.124, psnr=27.4]
+(val) Epoch 88, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.88s/it, avg_loss=-1, avg_psnr=-1, loss=5.64, psnr=21.5]
+save ckpt to ./exp-1/epoch=88.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.225) Epoch 89, lr:1e-05: 100%|██████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.0987, avg_psnr=29.3, loss=0.112, psnr=27.9]
+(val) Epoch 89, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=1.35, psnr=27.5]
+save ckpt to ./exp-1/epoch=89.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.250) Epoch 90, lr:1e-05: 100%|████████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.107, avg_psnr=29, loss=0.0982, psnr=28.6]
+(val) Epoch 90, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.83s/it, avg_loss=-1, avg_psnr=-1, loss=2.2, psnr=25.3]
+save ckpt to ./exp-1/epoch=90.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.275) Epoch 91, lr:1e-05: 100%|█████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0999, avg_psnr=29.3, loss=0.0909, psnr=28.8]
+(val) Epoch 91, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.02s/it, avg_loss=-1, avg_psnr=-1, loss=1.39, psnr=27.4]
+save ckpt to ./exp-1/epoch=91.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.300) Epoch 92, lr:1e-05: 100%|█████████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.112, avg_psnr=28.7, loss=0.111, psnr=28]
+(val) Epoch 92, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.07s/it, avg_loss=-1, avg_psnr=-1, loss=1.81, psnr=25.9]
+save ckpt to ./exp-1/epoch=92.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.325) Epoch 93, lr:1e-05: 100%|██████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.113, avg_psnr=28.7, loss=0.0901, psnr=28.8]
+(val) Epoch 93, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.07s/it, avg_loss=-1, avg_psnr=-1, loss=1.67, psnr=26.8]
+save ckpt to ./exp-1/epoch=93.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.350) Epoch 94, lr:1e-05: 100%|██████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0982, avg_psnr=29.4, loss=0.116, psnr=27.8]
+(val) Epoch 94, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.10s/it, avg_loss=-1, avg_psnr=-1, loss=2.82, psnr=24.7]
+save ckpt to ./exp-1/epoch=94.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.375) Epoch 95, lr:1e-05: 100%|████████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.108, avg_psnr=29, loss=0.0938, psnr=28.7]
+(val) Epoch 95, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.17s/it, avg_loss=-1, avg_psnr=-1, loss=2.16, psnr=25.2]
+save ckpt to ./exp-1/epoch=95.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.400) Epoch 96, lr:1e-05: 100%|█████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.0992, avg_psnr=29.4, loss=0.0931, psnr=28.8]
+(val) Epoch 96, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.11s/it, avg_loss=-1, avg_psnr=-1, loss=2.59, psnr=24.6]
+save ckpt to ./exp-1/epoch=96.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.425) Epoch 97, lr:1e-05: 100%|████████████████████| 365/365 [07:32<00:00,  1.24s/it, avg_loss=0.101, avg_psnr=29.4, loss=0.0918, psnr=29]
+(val) Epoch 97, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.08s/it, avg_loss=-1, avg_psnr=-1, loss=3.17, psnr=23.6]
+save ckpt to ./exp-1/epoch=97.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.450) Epoch 98, lr:1e-05: 100%|██████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0975, avg_psnr=29.5, loss=0.101, psnr=28.4]
+(val) Epoch 98, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.01s/it, avg_loss=-1, avg_psnr=-1, loss=3.2, psnr=24.1]
+save ckpt to ./exp-1/epoch=98.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.475) Epoch 99, lr:1e-05: 100%|███████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.101, avg_psnr=29.3, loss=0.118, psnr=27.9]
+(val) Epoch 99, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.01s/it, avg_loss=-1, avg_psnr=-1, loss=1.73, psnr=26.1]
+save ckpt to ./exp-1/epoch=99.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.500) Epoch 100, lr:1e-05: 100%|█████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0997, avg_psnr=29.5, loss=0.115, psnr=27.9]
+(val) Epoch 100, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.86s/it, avg_loss=-1, avg_psnr=-1, loss=3.54, psnr=23.3]
+save ckpt to ./exp-1/epoch=100.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.525) Epoch 101, lr:1e-05: 100%|█████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.0967, avg_psnr=29.6, loss=0.101, psnr=28.5]
+(val) Epoch 101, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.91s/it, avg_loss=-1, avg_psnr=-1, loss=1.96, psnr=25.6]
+save ckpt to ./exp-1/epoch=101.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.550) Epoch 102, lr:1e-05: 100%|█████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0991, avg_psnr=29.4, loss=0.121, psnr=27.7]
+(val) Epoch 102, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.85s/it, avg_loss=-1, avg_psnr=-1, loss=4.05, psnr=23]
+save ckpt to ./exp-1/epoch=102.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.575) Epoch 103, lr:1e-05: 100%|█████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0968, avg_psnr=29.5, loss=0.101, psnr=28.5]
+(val) Epoch 103, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.91s/it, avg_loss=-1, avg_psnr=-1, loss=2.38, psnr=24.7]
+save ckpt to ./exp-1/epoch=103.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.600) Epoch 104, lr:1e-05: 100%|█████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0955, avg_psnr=29.6, loss=0.101, psnr=28.6]
+(val) Epoch 104, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.78s/it, avg_loss=-1, avg_psnr=-1, loss=3.6, psnr=23.6]
+save ckpt to ./exp-1/epoch=104.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.625) Epoch 105, lr:1e-05: 100%|█████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.0967, avg_psnr=29.6, loss=0.108, psnr=28.3]
+(val) Epoch 105, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.21s/it, avg_loss=-1, avg_psnr=-1, loss=1.58, psnr=26.6]
+save ckpt to ./exp-1/epoch=105.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.650) Epoch 106, lr:1e-05: 100%|█████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0974, avg_psnr=29.6, loss=0.119, psnr=27.7]
+(val) Epoch 106, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.14s/it, avg_loss=-1, avg_psnr=-1, loss=1.89, psnr=25.6]
+save ckpt to ./exp-1/epoch=106.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.675) Epoch 107, lr:1e-05: 100%|████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0992, avg_psnr=29.5, loss=0.0834, psnr=29.4]
+(val) Epoch 107, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.10s/it, avg_loss=-1, avg_psnr=-1, loss=1.1, psnr=28.2]
+save ckpt to ./exp-1/epoch=107_psnr=28.247_loss=1.103.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.700) Epoch 108, lr:1e-05:  58%|█████████▎      | 213/365 [04:27<03:08,  1.24s(train [TeacherForcing: OFF, 0.0], beta: 0.700) Epoch 108, lr:1e-05:  58%|█████████▎      | 213/365 [04:28<03:08,  1.(train [TeacherForcing: OFF, 0.0], beta: 0.700) Epoch 108, lr:1e-05: 100%|██████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.096, avg_psnr=29.7, loss=0.105, psnr=28.5]q8]
+(val) Epoch 108, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.98s/it, avg_loss=-1, avg_psnr=-1, loss=3, psnr=24.4]
+save ckpt to ./exp-1/epoch=108.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.725) Epoch 109, lr:1e-05: 100%|████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.0939, avg_psnr=29.8, loss=0.0951, psnr=28.8]
+(val) Epoch 109, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.94s/it, avg_loss=-1, avg_psnr=-1, loss=1.6, psnr=26.5]
+save ckpt to ./exp-1/epoch=109.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.750) Epoch 110, lr:1e-05: 100%|████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0931, avg_psnr=29.8, loss=0.0835, psnr=29.4]
+(val) Epoch 110, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.92s/it, avg_loss=-1, avg_psnr=-1, loss=2.81, psnr=24.1]
+save ckpt to ./exp-1/epoch=110.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.775) Epoch 111, lr:1e-05: 100%|████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.0922, avg_psnr=29.9, loss=0.0951, psnr=28.9]
+(val) Epoch 111, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.84s/it, avg_loss=-1, avg_psnr=-1, loss=2.44, psnr=24.6]
+save ckpt to ./exp-1/epoch=111.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.800) Epoch 112, lr:1e-05: 100%|████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.0947, avg_psnr=29.8, loss=0.0852, psnr=29.5]
+(val) Epoch 112, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.92s/it, avg_loss=-1, avg_psnr=-1, loss=2.5, psnr=24.8]
+save ckpt to ./exp-1/epoch=112.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.825) Epoch 113, lr:1e-05: 100%|████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.0955, avg_psnr=29.8, loss=0.0935, psnr=28.9]
+(val) Epoch 113, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.06s/it, avg_loss=-1, avg_psnr=-1, loss=4, psnr=23.1]
+save ckpt to ./exp-1/epoch=113.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.850) Epoch 114, lr:1e-05: 100%|████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0926, avg_psnr=29.9, loss=0.0992, psnr=28.7]
+(val) Epoch 114, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.94s/it, avg_loss=-1, avg_psnr=-1, loss=1.16, psnr=28.4]
+save ckpt to ./exp-1/epoch=114_psnr=28.372.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.875) Epoch 115, lr:1e-05: 100%|████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0987, avg_psnr=29.7, loss=0.0927, psnr=29.1]
+(val) Epoch 115, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.88s/it, avg_loss=-1, avg_psnr=-1, loss=4.77, psnr=22.1]
+save ckpt to ./exp-1/epoch=115.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.900) Epoch 116, lr:1e-05: 100%|████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0943, avg_psnr=29.9, loss=0.0895, psnr=29.4]
+(val) Epoch 116, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.99s/it, avg_loss=-1, avg_psnr=-1, loss=1.37, psnr=27.5]
+save ckpt to ./exp-1/epoch=116.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.925) Epoch 117, lr:1e-05: 100%|███████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0933, avg_psnr=29.9, loss=0.117, psnr=28]
+(val) Epoch 117, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.93s/it, avg_loss=-1, avg_psnr=-1, loss=1.26, psnr=27.8]
+save ckpt to ./exp-1/epoch=117.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.950) Epoch 118, lr:1e-05: 100%|██████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.0921, avg_psnr=30, loss=0.0875, psnr=29.4]
+(val) Epoch 118, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.02s/it, avg_loss=-1, avg_psnr=-1, loss=1.4, psnr=27.1]
+save ckpt to ./exp-1/epoch=118.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.975) Epoch 119, lr:1e-05: 100%|████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0901, avg_psnr=30.1, loss=0.0823, psnr=29.7]
+(val) Epoch 119, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.86s/it, avg_loss=-1, avg_psnr=-1, loss=2.04, psnr=25.5]
+save ckpt to ./exp-1/epoch=119.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.000) Epoch 120, lr:1e-05: 100%|██████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.109, avg_psnr=28.8, loss=0.152, psnr=26.8]
+(val) Epoch 120, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=4.92, psnr=21.6]
+save ckpt to ./exp-1/epoch=120.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.025) Epoch 121, lr:1e-05: 100%|█████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0998, avg_psnr=29.1, loss=0.121, psnr=27.5]
+(val) Epoch 121, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=2.42, psnr=25]
+save ckpt to ./exp-1/epoch=121.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.050) Epoch 122, lr:1e-05: 100%|█████████████████| 365/365 [07:33<00:00,  1.24s/it, avg_loss=0.0947, avg_psnr=29.4, loss=0.222, psnr=25.3]
+(val) Epoch 122, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.88s/it, avg_loss=-1, avg_psnr=-1, loss=8.76, psnr=19.1]
+save ckpt to ./exp-1/epoch=122.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.075) Epoch 123, lr:1e-05: 100%|█████████████████| 365/365 [07:38<00:00,  1.26s/it, avg_loss=0.108, avg_psnr=28.8, loss=0.0978, psnr=28.3]
+(val) Epoch 123, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.59s/it, avg_loss=-1, avg_psnr=-1, loss=3.99, psnr=22.9]
+save ckpt to ./exp-1/epoch=123.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.100) Epoch 124, lr:1e-05: 100%|███████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.102, avg_psnr=29, loss=0.0802, psnr=29.2]
+(val) Epoch 124, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.19s/it, avg_loss=-1, avg_psnr=-1, loss=2.83, psnr=25.1]
+save ckpt to ./exp-1/epoch=124.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.125) Epoch 125, lr:1e-05: 100%|█████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0862, avg_psnr=29.9, loss=0.123, psnr=27.6]
+(val) Epoch 125, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.98s/it, avg_loss=-1, avg_psnr=-1, loss=5.67, psnr=21.5]
+save ckpt to ./exp-1/epoch=125.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 126, lr:1e-05: 100%|█████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.089, avg_psnr=29.7, loss=0.0855, psnr=29.1]
+(val) Epoch 126, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.88s/it, avg_loss=-1, avg_psnr=-1, loss=1.1, psnr=28.9]
+save ckpt to ./exp-1/epoch=126_psnr=28.930_loss=1.101.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.175) Epoch 127, lr:1e-05: 100%|████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.0895, avg_psnr=29.7, loss=0.0885, psnr=28.8]
+(val) Epoch 127, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.95s/it, avg_loss=-1, avg_psnr=-1, loss=2.57, psnr=24.4]
+save ckpt to ./exp-1/epoch=127.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.200) Epoch 128, lr:1e-05: 100%|██████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0963, avg_psnr=29.4, loss=0.0675, psnr=30]
+(val) Epoch 128, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.13s/it, avg_loss=-1, avg_psnr=-1, loss=1.47, psnr=27]
+save ckpt to ./exp-1/epoch=128.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.225) Epoch 129, lr:1e-05: 100%|████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0858, avg_psnr=29.9, loss=0.0803, psnr=29.4]
+(val) Epoch 129, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.02s/it, avg_loss=-1, avg_psnr=-1, loss=1.3, psnr=27.4]
+save ckpt to ./exp-1/epoch=129.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.250) Epoch 130, lr:1e-05: 100%|████████████████| 365/365 [07:38<00:00,  1.25s/it, avg_loss=0.0879, avg_psnr=29.8, loss=0.0737, psnr=29.7]
+(val) Epoch 130, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=2.87, psnr=24.1]
+save ckpt to ./exp-1/epoch=130.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.275) Epoch 131, lr:1e-05: 100%|█████████████████| 365/365 [07:38<00:00,  1.26s/it, avg_loss=0.0841, avg_psnr=30.1, loss=0.126, psnr=27.5]
+(val) Epoch 131, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.97s/it, avg_loss=-1, avg_psnr=-1, loss=5.66, psnr=21.5]
+save ckpt to ./exp-1/epoch=131.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.300) Epoch 132, lr:1e-05: 100%|████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0813, avg_psnr=30.1, loss=0.0726, psnr=29.9]
+(val) Epoch 132, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.10s/it, avg_loss=-1, avg_psnr=-1, loss=3.12, psnr=23.8]
+save ckpt to ./exp-1/epoch=132.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.325) Epoch 133, lr:1e-05: 100%|██████████████████| 365/365 [07:34<00:00,  1.24s/it, avg_loss=0.0841, avg_psnr=30, loss=0.0654, psnr=30.2]
+(val) Epoch 133, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.91s/it, avg_loss=-1, avg_psnr=-1, loss=1.3, psnr=27.9]
+save ckpt to ./exp-1/epoch=133.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.350) Epoch 134, lr:1e-05: 100%|████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0812, avg_psnr=30.2, loss=0.0814, psnr=29.3]
+(val) Epoch 134, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.10s/it, avg_loss=-1, avg_psnr=-1, loss=0.88, psnr=29.8]
+save ckpt to ./exp-1/epoch=134_psnr=29.837_loss=0.880.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.375) Epoch 135, lr:1e-05: 100%|████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0795, avg_psnr=30.4, loss=0.0792, psnr=29.4]
+(val) Epoch 135, lr:1e-05: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.18s/it, avg_loss=-1, avg_psnr=-1, loss=2.83, psnr=24]
+save ckpt to ./exp-1/epoch=135.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.400) Epoch 136, lr:1e-05: 100%|████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0909, avg_psnr=29.7, loss=0.0982, psnr=28.6]
+(val) Epoch 136, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.17s/it, avg_loss=-1, avg_psnr=-1, loss=6.86, psnr=20.4]
+save ckpt to ./exp-1/epoch=136.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.425) Epoch 137, lr:1e-05: 100%|█████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.0839, avg_psnr=30.1, loss=0.076, psnr=29.6]
+(val) Epoch 137, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.16s/it, avg_loss=-1, avg_psnr=-1, loss=2.67, psnr=25.1]
+save ckpt to ./exp-1/epoch=137.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.450) Epoch 138, lr:1e-05: 100%|██████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0857, avg_psnr=30, loss=0.0762, psnr=29.8]
+(val) Epoch 138, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.97s/it, avg_loss=-1, avg_psnr=-1, loss=1.22, psnr=28.3]
+save ckpt to ./exp-1/epoch=138.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.475) Epoch 139, lr:1e-05: 100%|██████████████████| 365/365 [07:34<00:00,  1.25s/it, avg_loss=0.0842, avg_psnr=30.2, loss=0.12, psnr=27.7]
+(val) Epoch 139, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.19s/it, avg_loss=-1, avg_psnr=-1, loss=7.86, psnr=19.7]
+save ckpt to ./exp-1/epoch=139.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.500) Epoch 140, lr:1e-05: 100%|█████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0831, avg_psnr=30.2, loss=0.099, psnr=28.9]
+(val) Epoch 140, lr:1e-05: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=1.9, psnr=26.2]
+save ckpt to ./exp-1/epoch=140.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.525) Epoch 141, lr:1e-05: 100%|████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0789, avg_psnr=30.5, loss=0.0745, psnr=29.9]
+(val) Epoch 141, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.05s/it, avg_loss=-1, avg_psnr=-1, loss=1.8, psnr=26]
+save ckpt to ./exp-1/epoch=141.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.550) Epoch 142, lr:1e-05: 100%|████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0845, avg_psnr=30.2, loss=0.0992, psnr=28.6]
+(val) Epoch 142, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.06s/it, avg_loss=-1, avg_psnr=-1, loss=3.35, psnr=24.1]
+save ckpt to ./exp-1/epoch=142.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.575) Epoch 143, lr:1e-05: 100%|██████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0832, avg_psnr=30.2, loss=0.0756, psnr=30]
+(val) Epoch 143, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.10s/it, avg_loss=-1, avg_psnr=-1, loss=1.26, psnr=27.9]
+save ckpt to ./exp-1/epoch=143.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.600) Epoch 144, lr:1e-05: 100%|████████████████| 365/365 [07:39<00:00,  1.26s/it, avg_loss=0.0812, avg_psnr=30.4, loss=0.0869, psnr=29.3]
+(val) Epoch 144, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.00s/it, avg_loss=-1, avg_psnr=-1, loss=2.75, psnr=24.8]
+save ckpt to ./exp-1/epoch=144.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.625) Epoch 145, lr:1e-05: 100%|████████████████| 365/365 [07:38<00:00,  1.26s/it, avg_loss=0.0832, avg_psnr=30.3, loss=0.0933, psnr=28.9]
+(val) Epoch 145, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.09s/it, avg_loss=-1, avg_psnr=-1, loss=1.01, psnr=28.8]
+save ckpt to ./exp-1/epoch=145.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.650) Epoch 146, lr:1e-05: 100%|████████████████| 365/365 [07:36<00:00,  1.25s/it, avg_loss=0.0776, avg_psnr=30.7, loss=0.0798, psnr=29.6]
+(val) Epoch 146, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:14<00:00, 14.95s/it, avg_loss=-1, avg_psnr=-1, loss=0.928, psnr=29.3]
+save ckpt to ./exp-1/epoch=146.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.675) Epoch 147, lr:1e-05: 100%|████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0798, avg_psnr=30.5, loss=0.0804, psnr=29.5]
+(val) Epoch 147, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.22s/it, avg_loss=-1, avg_psnr=-1, loss=1.11, psnr=28.4]
+save ckpt to ./exp-1/epoch=147.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.700) Epoch 148, lr:1e-05: 100%|████████████████| 365/365 [07:35<00:00,  1.25s/it, avg_loss=0.0787, avg_psnr=30.6, loss=0.0963, psnr=28.8]
+(val) Epoch 148, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.19s/it, avg_loss=-1, avg_psnr=-1, loss=2.91, psnr=24.6]
+save ckpt to ./exp-1/epoch=148.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.725) Epoch 149, lr:1e-05: 100%|█████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0797, avg_psnr=30.6, loss=0.175, psnr=26.5]
+(val) Epoch 149, lr:1e-05: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.02s/it, avg_loss=-1, avg_psnr=-1, loss=6.74, psnr=20.3]
+save ckpt to ./exp-1/epoch=149.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.750) Epoch 150, lr:1e-05: 100%|████████████████| 365/365 [07:37<00:00,  1.25s/it, avg_loss=0.0793, avg_psnr=30.6, loss=0.0702, psnr=30.2]
+(val) Epoch 150, lr:1e-05: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.04s/it, avg_loss=-1, avg_psnr=-1, loss=0.789, psnr=30.1]
+save ckpt to ./exp-1/epoch=150_psnr=30.082_loss=0.789.ckpt
+
+
+
+########
+
+
+root@c7c77cc4ac8e:/workspace/Lab04_template
+# python3 Trainer.py --device cuda --optim AdamW --DR "../LAB4_Dataset/LAB4_Dataset/" --continue_training --reset_teacher_forcing --save_root "./exp-4-finetune" 
+# --ckpt_path "./exp-1/epoch=150_psnr=30.082_loss=0.789.ckpt" --train_vi_len 16 --batch_size 1 --auto_save --tfr 1 --tfr_sde 10 --use_new_lr --lr 0.0000001 --continue_training --reset_teacher_forcing
+
+(train [TeacherForcing: ON, 1.0], beta: 0.750) Epoch 150, lr:1e-07: 100%|██████████████| 1463/1463 [07:18<00:00,  3.33it/s, avg_loss=0.00723, avg_psnr=35.1, loss=0.0156, psnr=31.2]a
+(val) Epoch 150, lr:1e-07: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:16<00:00, 16.90s/it, avg_loss=-1, avg_psnr=-1, loss=3.97, psnr=23]
+save ckpt to ./exp-4-finetune/epoch=150_psnr=22.956_loss=3.974.ckpt
+(train [TeacherForcing: ON, 0.9], beta: 0.775) Epoch 151, lr:1e-07: 100%|██████████████| 1463/1463 [07:17<00:00,  3.34it/s, avg_loss=0.00702, avg_psnr=35.3, loss=0.0153, psnr=31.4]
+(val) Epoch 151, lr:1e-07: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.88s/it, avg_loss=-1, avg_psnr=-1, loss=2.47, psnr=24.8]
+save ckpt to ./exp-4-finetune/epoch=151_psnr=24.791_loss=2.465.ckpt
+(train [TeacherForcing: OFF, 0.8], beta: 0.800) Epoch 152, lr:1e-07: 100%|███████████████| 1463/1463 [07:18<00:00,  3.33it/s, avg_loss=0.0141, avg_psnr=32.1, loss=0.031, psnr=27.6]
+(val) Epoch 152, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.96s/it, avg_loss=-1, avg_psnr=-1, loss=0.657, psnr=30.7]
+save ckpt to ./exp-4-finetune/epoch=152_psnr=30.728_loss=0.657.ckpt
+
+gjt@DESKTOP-2TR8G6S:/mnt/c/Users/User/Desktop/nycu-cgi/DLP/Lab04/workspace/Lab4_template$ python3 Trainer.py --device cuda --optim AdamW --DR "../LAB4_Dataset/LAB4_Dataset/" --continue_training --reset_teacher_forcing --save_root "./exp-6-finetune" --ckpt_path "./exp-6-finetune/epoch=152_psnr=30.728_loss=0.657.ckpt" --fast_train --train_vi_len 32 --batch_size 1 --per_save 3 --auto_save --tfr 1 --tfr_sde 10 --use_new_lr --lr 0.0000001
+
+(train [TeacherForcing: ON, 1.0], beta: 0.800) Epoch 152, lr:1e-07: 100%|██████████████████| 10/10 [00:11<00:00,  1.13s/it, avg_loss=0.0446, avg_psnr=29.9, loss=0.00995, psnr=37.1]
+(val) Epoch 152, lr:1e-07: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:26<00:00, 26.64s/it, avg_loss=-1, avg_psnr=-1, loss=1.19, psnr=28.1]
+save ckpt to ./exp-6-finetune/epoch=152_psnr=28.079_loss=1.188.ckpt
+(train [TeacherForcing: ON, 0.9], beta: 0.825) Epoch 153, lr:1e-07: 100%|█████████████████████| 10/10 [00:10<00:00,  1.01s/it, avg_loss=0.0445, avg_psnr=30, loss=0.0101, psnr=37.1]
+(val) Epoch 153, lr:1e-07: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:27<00:00, 27.50s/it, avg_loss=-1, avg_psnr=-1, loss=1.85, psnr=26.2]
+save ckpt to ./exp-6-finetune/epoch=153.ckpt
+(train [TeacherForcing: OFF, 0.8], beta: 0.850) Epoch 154, lr:1e-07: 100%|███████████████████| 10/10 [00:10<00:00,  1.04s/it, avg_loss=0.154, avg_psnr=24.5, loss=0.0224, psnr=32.3]                                                         
+(val) Epoch 154, lr:1e-07: 100%|████████████████████████████████████████████████████████████████████████| 1/1 [00:27<00:00, 27.10s/it, avg_loss=-1, avg_psnr=-1, loss=1.22, psnr=28]                                                         
+(train [TeacherForcing: OFF, 0.7], beta: 0.875) Epoch 155, lr:1e-07: 100%|███████████████████| 10/10 [00:10<00:00,  1.02s/it, avg_loss=0.153, avg_psnr=24.6, loss=0.0223, psnr=32.4]                                                         
+(val) Epoch 155, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:26<00:00, 26.67s/it, avg_loss=-1, avg_psnr=-1, loss=0.601, psnr=31.2]                                                         
+save ckpt to ./exp-6-finetune/epoch=155_psnr=31.237_loss=0.601.ckpt
+
+root@c7c77cc4ac8e:/workspace/Lab04_template# python3 Trainer.py --device cuda --optim AdamW --DR "../LAB4_Dataset/LAB4_Dataset/" --continue_training --reset_teacher_forcing --save_root "./exp-5-finetune/" --ckpt_path "./exp-5-finetune/epoch=155_psnr=31.237_loss=0.601.ckpt" --train_vi_len 16 --batch_size 1 --auto_save --tfr 1 --tfr_sde 10 --use_new_lr --lr 0.0000001 --continue_training --reset_teacher_forcing
+(train [TeacherForcing: ON, 1.0], beta: 0.875) Epoch 155, lr:1e-07: 100%|██████████████| 1463/1463 [07:19<00:00,  3.33it/s, avg_loss=0.00702, avg_psnr=35.6, loss=0.0154, psnr=31.6]
+(val) Epoch 155, lr:1e-07: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:16<00:00, 16.84s/it, avg_loss=-1, avg_psnr=-1, loss=2.21, psnr=25.3]
+save ckpt to ./exp-5-finetune/epoch=155_psnr=25.288_loss=2.206.ckpt
+(train [TeacherForcing: ON, 0.9], beta: 0.900) Epoch 156, lr:1e-07: 100%|██████████████| 1463/1463 [07:18<00:00,  3.34it/s, avg_loss=0.00695, avg_psnr=35.6, loss=0.0152, psnr=31.7]
+(val) Epoch 156, lr:1e-07: 100%|██████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.96s/it, avg_loss=-1, avg_psnr=-1, loss=1.58, psnr=26.6]
+save ckpt to ./exp-5-finetune/epoch=156_psnr=26.591_loss=1.580.ckpt
+(train [TeacherForcing: OFF, 0.8], beta: 0.925) Epoch 157, lr:1e-07: 100%|██████████████| 1463/1463 [07:19<00:00,  3.33it/s, avg_loss=0.0143, avg_psnr=32.1, loss=0.0309, psnr=27.7]
+(val) Epoch 157, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:16<00:00, 16.03s/it, avg_loss=-1, avg_psnr=-1, loss=0.573, psnr=31.3]
+save ckpt to ./exp-5-finetune/epoch=157_psnr=31.268_loss=0.573.ckpt
+(train [TeacherForcing: OFF, 0.7], beta: 0.950) Epoch 158, lr:1e-07: 100%|██████████████| 1463/1463 [07:19<00:00,  3.33it/s, avg_loss=0.0143, avg_psnr=32.2, loss=0.0311, psnr=27.7]
+(val) Epoch 158, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:16<00:00, 16.11s/it, avg_loss=-1, avg_psnr=-1, loss=0.639, psnr=30.8]
+(train [TeacherForcing: OFF, 0.6], beta: 0.975) Epoch 159, lr:1e-07: 100%|██████████████| 1463/1463 [07:18<00:00,  3.34it/s, avg_loss=0.0143, avg_psnr=32.2, loss=0.0311, psnr=27.7]
+(val) Epoch 159, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:16<00:00, 16.02s/it, avg_loss=-1, avg_psnr=-1, loss=0.662, psnr=30.7]
+save ckpt to ./exp-5-finetune/epoch=159.ckpt
+(train [TeacherForcing: OFF, 0.5], beta: 0.000) Epoch 160, lr:1e-07: 100%|█████████████████| 1503/1503 [07:31<00:00,  3.33it/s, avg_loss=0.0141, avg_psnr=32, loss=0.057, psnr=24.4]
+(val) Epoch 160, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.84s/it, avg_loss=-1, avg_psnr=-1, loss=0.617, psnr=31.1]
+(train [TeacherForcing: OFF, 0.4], beta: 0.025) Epoch 161, lr:1e-07: 100%|█████████████████| 1503/1503 [07:31<00:00,  3.33it/s, avg_loss=0.0141, avg_psnr=32, loss=0.057, psnr=24.4]
+(val) Epoch 161, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.77s/it, avg_loss=-1, avg_psnr=-1, loss=0.652, psnr=30.9]
+(train [TeacherForcing: OFF, 0.3], beta: 0.050) Epoch 162, lr:1e-07: 100%|█████████████████| 1503/1503 [07:31<00:00,  3.33it/s, avg_loss=0.0142, avg_psnr=32, loss=0.057, psnr=24.4]
+(val) Epoch 162, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.85s/it, avg_loss=-1, avg_psnr=-1, loss=0.676, psnr=30.7]
+save ckpt to ./exp-5-finetune/epoch=162.ckpt
+(train [TeacherForcing: OFF, 0.2], beta: 0.075) Epoch 163, lr:1e-07: 100%|████████████████| 1503/1503 [07:31<00:00,  3.33it/s, avg_loss=0.0142, avg_psnr=32, loss=0.0573, psnr=24.4]
+(val) Epoch 163, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.83s/it, avg_loss=-1, avg_psnr=-1, loss=0.725, psnr=30.6]
+(train [TeacherForcing: OFF, 0.1], beta: 0.100) Epoch 164, lr:1e-07: 100%|████████████████| 1503/1503 [07:31<00:00,  3.33it/s, avg_loss=0.0142, avg_psnr=32, loss=0.0569, psnr=24.4]
+(val) Epoch 164, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.85s/it, avg_loss=-1, avg_psnr=-1, loss=0.753, psnr=30.6]
+(train [TeacherForcing: OFF, 0.0], beta: 0.125) Epoch 165, lr:1e-07: 100%|████████████████| 1503/1503 [07:31<00:00,  3.33it/s, avg_loss=0.0143, avg_psnr=32, loss=0.0569, psnr=24.4]
+(val) Epoch 165, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.81s/it, avg_loss=-1, avg_psnr=-1, loss=0.711, psnr=30.8]
+save ckpt to ./exp-5-finetune/epoch=165.ckpt
+(train [TeacherForcing: OFF, 0.0], beta: 0.150) Epoch 166, lr:1e-07: 100%|████████████████| 1503/1503 [07:31<00:00,  3.33it/s, avg_loss=0.0143, avg_psnr=32, loss=0.0574, psnr=24.4]
+(val) Epoch 166, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:16<00:00, 16.04s/it, avg_loss=-1, avg_psnr=-1, loss=0.699, psnr=30.9]
+(train [TeacherForcing: OFF, 0.0], beta: 0.175) Epoch 167, lr:1e-07: 100%|████████████████| 1503/1503 [07:31<00:00,  3.33it/s, avg_loss=0.0143, avg_psnr=32, loss=0.0571, psnr=24.4]
+(val) Epoch 167, lr:1e-07: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:15<00:00, 15.82s/it, avg_loss=-1, avg_psnr=-1, loss=0.724, psnr=30.7]
+

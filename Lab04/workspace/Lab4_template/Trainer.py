@@ -17,10 +17,44 @@ from torch import stack
 from tqdm import tqdm
 import imageio
 
-from utils import *
 
 import matplotlib.pyplot as plt
 from math import log10
+import csv
+import os
+
+def record_training_result(epoch, beta, avg_loss, avg_psnr, result_type, tfr, tf, lr, root, file_name='training_results.csv'):
+    # Ensure the root directory exists
+    os.makedirs(root, exist_ok=True)
+
+    # Create the full file path
+    file_path = os.path.join(root, file_name)
+    
+    # Check if the file already exists
+    file_exists = os.path.isfile(file_path)
+
+    # Define the header
+    header = ['epoch', 'beta', 'avg_loss', 'avg_psnr', 'type','teacher forcing ratio','teacher forcing','learning_rate']
+
+    # Open the file in append mode
+    with open(file_path, mode='a', newline='') as file:
+        writer = csv.writer(file)
+
+        # Write the header if the file doesn't exist
+        if not file_exists:
+            writer.writerow(header)
+
+        # Write the training result
+        writer.writerow([epoch, beta, avg_loss, avg_psnr, result_type,tfr,tf,lr])
+
+
+
+seed = 48763
+
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed(seed)
 
 def Generate_PSNR(imgs1, imgs2, data_range=1.):
     """PSNR for torch tensor"""
@@ -34,16 +68,60 @@ def kl_criterion(mu, logvar, batch_size):
   KLD /= batch_size  
   return KLD
 
+class tf_detector():
+    
+    def __init__(self, args, patience=5, threshold=0.01):
+        self.args = args
+        self.valid_psnr_record = []
+        self.valid_loss_record = []
+        self.next_ratio = 1
+        self.patience = patience
+        self.threshold = threshold
+
+    def add_valid_record(self, psnr, loss):
+        self.valid_psnr_record.append(psnr)
+        self.valid_loss_record.append(loss)
+
+    def check_convergence(self, records):
+        if len(records) < self.patience + 1:
+            return False
+        
+        recent_records = records[-self.patience:]
+        deltas = [abs(recent_records[i] - recent_records[i-1]) for i in range(1, len(recent_records))]
+        
+        if all(delta < self.threshold for delta in deltas):
+            return True
+        return False
+
+    # update the teacher forcing ratio to 1 if convergence in validation metrics is detected
+    def update(self, current_tfr):
+        if current_tfr > 0:
+            self.next_ratio = current_tfr  # keep the ratio
+            return
+        
+        if (self.check_convergence(self.valid_psnr_record) and 
+            self.check_convergence(self.valid_loss_record)):
+            self.next_ratio = 1  # Set the ratio to 1 if convergence detected in validation metrics
+            self.valid_psnr_record = []
+            self.valid_loss_record = []
+            # clear array waiting new inputs (which after teacher forcing ended up, then recalc the ratio)
+
+    def get_TF_ratio(self):
+        return self.next_ratio
 
 class kl_annealing():
     def __init__(self, args, current_epoch=0):
         # TODO
         self.args = args
         self.iter = current_epoch
-        self.beta = 0
+        
         self.kl_anneal_type = args.kl_anneal_type
         self.kl_anneal_cycle = args.kl_anneal_cycle
         self.kl_anneal_ratio = args.kl_anneal_ratio
+        if self.kl_anneal_type == "NONE":
+            self.beta = 1
+        else:
+            self.beta = 0
         if (self.iter != 0):
             self.iter -= 1 # shift
             self.update()
@@ -59,8 +137,8 @@ class kl_annealing():
             self.beta = self.frange_cycle_linear(n_iter=self.args.num_epoch,start=0.0,stop=1.0,n_cycle=self.kl_anneal_cycle,ratio=self.kl_anneal_ratio)[self.iter]  # current beta
         elif self.kl_anneal_type == "Monotonic":
             self.beta = self.frange_cycle_linear(n_iter=self.args.num_epoch,start=0.0,stop=1.0,n_cycle=1,ratio=0.25)[self.iter]  # current beta
-        
-    
+        elif self.kl_anneal_type == "NONE":
+            self.beta = 1
     
     def get_beta(self):
         return self.beta
@@ -145,6 +223,10 @@ class VAE_Model(nn.Module):
 
     
     def training_stage(self):
+        if (self.args.TF_detector):
+            self.tf_detector = tf_detector(args,args.detector_patience,args.detector_threshold)
+
+
         max_psnr = -1
         min_loss = 1e5
         for i in range(self.args.num_epoch):
@@ -176,11 +258,11 @@ class VAE_Model(nn.Module):
                     self.tqdm_bar('train [TeacherForcing: ON, {:.1f}], beta: {:.3f}'.format(self.tfr, beta), pbar, loss_value, lr=self.scheduler.get_last_lr()[0],psnr=avg_psnr,avg_loss=avg_loss,avg_psnr=ent_psnr)
                 else:
                     self.tqdm_bar('train [TeacherForcing: OFF, {:.1f}], beta: {:.3f}'.format(self.tfr, beta), pbar, loss_value, lr=self.scheduler.get_last_lr()[0],psnr=avg_psnr,avg_loss=avg_loss,avg_psnr=ent_psnr)
-                
-            insert_data(self.args.save_root, self.current_epoch, float(total_loss / t), float(total_psnr / t),"train")
+            
+            record_training_result(epoch=self.current_epoch,beta=self.kl_annealing.get_beta(),avg_loss=float(total_loss / t),avg_psnr=float(total_psnr / t),root=self.args.save_root,result_type="train",tfr=self.tfr,tf=adapt_TeacherForcing,lr=self.scheduler.get_last_lr()[0])
             ret_psnr,ret_loss = self.eval()
-
-            insert_data(self.args.save_root, self.current_epoch, float(ret_loss), float(ret_psnr),"valid")
+            record_training_result(epoch=self.current_epoch,beta=self.kl_annealing.get_beta(),avg_loss=float(ret_loss),avg_psnr=float(ret_psnr),root=self.args.save_root,result_type="valid",tfr=self.tfr,tf=adapt_TeacherForcing,lr=self.scheduler.get_last_lr()[0])
+            
 
             epoch_saved = False
 
@@ -207,6 +289,9 @@ class VAE_Model(nn.Module):
             self.current_epoch += 1
             if (not self.args.continue_training):
                 self.scheduler.step()
+            
+            if (self.args.TF_detector):
+                self.tf_detector.add_valid_record(psnr=ret_psnr,loss=ret_loss)
             self.teacher_forcing_ratio_update()
             self.kl_annealing.update()
             
@@ -288,20 +373,24 @@ class VAE_Model(nn.Module):
 
 
             
-            if (torch.isnan(gen_images).any()):
+            if (torch.isnan(gen_images).any() or 
+                torch.isnan(x_predictor_frame_encoder).any() or
+                torch.isnan(x_generator_frame_encoder).any() or
+                torch.isnan(p_pose_encoder).any() or 
+                torch.isnan(z).any() or
+                torch.isnan(decoder_fusion_output).any() or
+                torch.isnan(gen_images).any() or
+                torch.isnan(self.mse_criterion(gen_images,img[seq_id])).any() ):
+
                 print(seq_id)
-                print(self.mse_criterion(gen_images,img[seq_id]))
-                print(x_predictor.shape                 ,torch.isnan(x_predictor).any())
-                print(x_prev.shape   ,torch.isnan(x_prev).any())
-                
-                
-                
-                print(x_predictor_frame_encoder.shape   ,torch.isnan(x_predictor_frame_encoder).any())
-                print(x_generator_frame_encoder.shape   ,torch.isnan(x_generator_frame_encoder).any())
-                print(p_pose_encoder.shape              ,torch.isnan(p_pose_encoder).any())
-                print(z.shape                           ,torch.isnan(z).any())
-                print(decoder_fusion_output.shape       ,torch.isnan(decoder_fusion_output).any())
-                print(gen_images.shape                  ,torch.isnan(gen_images).any())
+                print(torch.isnan(x_predictor).any(),
+                        torch.isnan(x_prev).any(),
+                        torch.isnan(x_predictor_frame_encoder).any(),
+                        torch.isnan(x_generator_frame_encoder).any(),
+                        torch.isnan(p_pose_encoder).any(),
+                        torch.isnan(z).any(),
+                        torch.isnan(decoder_fusion_output).any(),
+                        torch.isnan(gen_images).any())
                 return 0,0,True
 
             
@@ -330,10 +419,7 @@ class VAE_Model(nn.Module):
 
         
         return avg_psnr,loss,False
-
-
-
-        
+       
     def val_one_step(self, img, label):
         # for the inference or same as the training ??
         # TODO
@@ -404,7 +490,6 @@ class VAE_Model(nn.Module):
 
 
 
-
         return avg_psnr,loss
         
                 
@@ -434,6 +519,23 @@ class VAE_Model(nn.Module):
                                   shuffle=False)  
         return train_loader
     
+    def finetune_dataloader(self):
+        transform = transforms.Compose([
+            transforms.Resize((self.args.frame_H, self.args.frame_W)),
+            transforms.ToTensor()
+        ])
+
+        dataset = Dataset_Dance(root=self.args.DR, transform=transform, mode='finetune', video_len=self.train_vi_len, \
+                                                partial=1.0)
+            
+        train_loader = DataLoader(dataset,
+                                  batch_size=self.batch_size,
+                                  num_workers=self.args.num_workers,
+                                  drop_last=True,
+                                  shuffle=False)  
+        return train_loader
+    
+
     def val_dataloader(self):
         transform = transforms.Compose([
             transforms.Resize((self.args.frame_H, self.args.frame_W)),
@@ -451,6 +553,11 @@ class VAE_Model(nn.Module):
         # TODO
         if self.current_epoch >= self.args.tfr_sde:
             self.tfr = max(self.tfr - self.tfr_d_step, 0)
+        
+        if (self.args.TF_detector):
+            self.tf_detector.update(current_tfr=self.tfr)
+            self.tfr = self.tf_detector.get_TF_ratio()
+        
             
     def tqdm_bar(self, mode, pbar, loss, lr,psnr,avg_loss,avg_psnr):
         pbar.set_description(f"({mode}) Epoch {self.current_epoch}, lr:{lr:.0e}" , refresh=False)
@@ -471,7 +578,8 @@ class VAE_Model(nn.Module):
         if self.args.ckpt_path != None:
             checkpoint = torch.load(self.args.ckpt_path)
             self.load_state_dict(checkpoint['state_dict'], strict=True) 
-            self.args.lr = checkpoint['lr']
+            if (not self.args.use_new_lr):
+                self.args.lr = checkpoint['lr']
             if (not self.args.reset_teacher_forcing):
                 self.tfr = checkpoint['tfr']
             self.optim      = optim.Adam(self.parameters(), lr=self.args.lr)
@@ -545,9 +653,24 @@ if __name__ == '__main__':
     parser.add_argument('--auto_save',    action='store_true' ,help="auto save best ckpt")
     parser.add_argument('--continue_training',    action='store_true' ,help="continue training dont change the learning rate schedular")
     parser.add_argument('--reset_teacher_forcing',    action='store_true' ,help="dont load the teacher forcing ratio from ckpt")
-    
-    
+    parser.add_argument('--use_new_lr',    action='store_true' ,help="dont load the learning rate from ckpt")
 
-    args = parser.parse_args()
     
+    parser.add_argument('--TF_detector',    action='store_true' ,help="use the auto teacher forcing ratio strategy")
+    parser.add_argument('--detector_patience',    type=int, default=5, help="last N patience")
+    parser.add_argument('--detector_threshold',    type=float, default=0.01, help="threshold that control if convergence")
+    
+    args = parser.parse_args()
+    # Construct the command string
+    cmd_str = "python " + " ".join([f"--{k} {v}" for k, v in vars(args).items() if v is not None and v is not False])
+
+    # File path for cmd.txt
+    cmd_file_path = os.path.join(args.save_root, 'cmd.txt')
+
+    os.makedirs(os.path.dirname(cmd_file_path), exist_ok=True)
+
+
+    # Write or append the command to cmd.txt
+    with open(cmd_file_path, 'a') as f:
+        f.write(cmd_str + '\n')
     main(args)

@@ -12,6 +12,14 @@ from models import MaskGit as VQGANTransformer
 import yaml
 import torch.nn.functional as F
 
+seed = 48763
+
+#random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed(seed)
+
+
 class MaskGIT:
     def __init__(self, args, MaskGit_CONFIGS):
         self.model = VQGANTransformer(MaskGit_CONFIGS["model_param"]).to(device=args.device)
@@ -32,8 +40,8 @@ class MaskGIT:
 ##TODO3 step1-1: total iteration decoding  
 #mask_b: iteration decoding initial mask, where mask_b is true means mask
     def inpainting(self,image,mask_b,i): #MakGIT inference
-        maska = torch.zeros(self.total_iter, 3, 16, 16) #save all iterations of masks in latent domain
-        imga = torch.zeros(self.total_iter+1, 3, 64, 64)#save all iterations of decoded images
+        maska = torch.zeros(self.total_iter+1, 3, 16, 16) #save all iterations of masks in latent domain
+        imga = torch.zeros(self.total_iter+2, 3, 64, 64)#save all iterations of decoded images
         mean = torch.tensor([0.4868, 0.4341, 0.3844],device=self.device).view(3, 1, 1)  
         std = torch.tensor([0.2620, 0.2527, 0.2543],device=self.device).view(3, 1, 1)
         ori=(image[0]*std)+mean
@@ -47,18 +55,27 @@ class MaskGIT:
             mask_bc=mask_b
             mask_b=mask_b.to(device=self.device)
             mask_bc=mask_bc.to(device=self.device)
-            
-            raise Exception('TODO3 step1-1!')
+            # mask_b -> masked latent space
+            # image -> masked image
+            #raise Exception('TODO3 step1-1!')
+            _, z_indices = self.model.encode_to_z(image)
             ratio = 0
             #iterative decoding for loop design
             #Hint: it's better to save original mask and the updated mask by scheduling separately
-            for step in range(self.total_iter):
+            for step in range(self.total_iter+1): # ratio will be 1
                 if step == self.sweet_spot:
                     break
-                ratio = None #this should be updated
-    
-                z_indices_predict, mask_bc = self.model.inpainting()
-
+                ratio = step / self.total_iter
+                
+                # mask_bc Y_M^(t)  masked token
+                # current 
+                #
+                # get 
+                z_indices_predict, mask_bc,z_indices = self.model.inpainting(z_indices,mask_b,mask_bc,step,self.total_iter,self.mask_func)
+                # mask_bc -> last masked latent space
+                # mask_b  -> original masked latent space
+                # z_indices -> last predict token
+                z_indices = z_indices_predict # update last
                 #static method yon can modify or not, make sure your visualization results are correct
                 mask_i=mask_bc.view(1, 16, 16)
                 mask_image = torch.ones(3, 16, 16)
@@ -72,12 +89,17 @@ class MaskGIT:
                 dec_img_ori=(decoded_img[0]*std)+mean
                 imga[step+1]=dec_img_ori #get decoded image
 
-            ##decoded image of the sweet spot only, the test_results folder path will be the --predicted-path for fid score calculation
-            vutils.save_image(dec_img_ori, os.path.join("test_results", f"image_{i:03d}.png"), nrow=1) 
+                # save each iteration choose sweet point
+                os.makedirs(os.path.join("test_results", f"{self.mask_func}_it_{step}"),exist_ok=True)
+                ##decoded image of the sweet spot only, the test_results folder path will be the --predicted-path for fid score calculation
+                vutils.save_image(dec_img_ori, os.path.join("test_results", f"{self.mask_func}_it_{step}", f"image_{i:03d}.png"), nrow=1) 
 
+            
+            os.makedirs(os.path.join("mask_scheduling", f"{self.mask_func}"),exist_ok=True)
+            os.makedirs(os.path.join("imga", f"{self.mask_func}"),exist_ok=True)
             #demo score 
-            vutils.save_image(maska, os.path.join("mask_scheduling", f"test_{i}.png"), nrow=10) 
-            vutils.save_image(imga, os.path.join("imga", f"test_{i}.png"), nrow=7)
+            vutils.save_image(maska, os.path.join("mask_scheduling", f"{self.mask_func}",f"test_{i}.png"), nrow=10) 
+            vutils.save_image(imga, os.path.join("imga", f"{self.mask_func}",f"test_{i}.png"), nrow=7)
 
 
 
@@ -121,15 +143,15 @@ if __name__ == '__main__':
     
     
 #TODO3 step1-2: modify the path, MVTM parameters
-    parser.add_argument('--load-transformer-ckpt-path', type=str, default='', help='load ckpt')
+    parser.add_argument('--load_transformer_ckpt_path', type=str, default='', help='load ckpt')
     
     #dataset path
-    parser.add_argument('--test-maskedimage-path', type=str, default='./cat_face/masked_image', help='Path to testing image dataset.')
-    parser.add_argument('--test-mask-path', type=str, default='./mask64', help='Path to testing mask dataset.')
+    parser.add_argument('--test_maskedimage_path', type=str, default='./cat_face/masked_image', help='Path to testing image dataset.')
+    parser.add_argument('--test_mask_path', type=str, default='./mask64', help='Path to testing mask dataset.')
     #MVTM parameter
-    parser.add_argument('--sweet-spot', type=int, default=0, help='sweet spot: the best step in total iteration')
-    parser.add_argument('--total-iter', type=int, default=0, help='total step for mask scheduling')
-    parser.add_argument('--mask-func', type=str, default='0', help='mask scheduling function')
+    parser.add_argument('--sweet_spot', type=int, default=10, help='sweet spot: the best step in total iteration')
+    parser.add_argument('--total_iter', type=int, default=0, help='total step for mask scheduling')
+    parser.add_argument('--mask_func', type=str, default='0', help='mask scheduling function')
 
     args = parser.parse_args()
 
